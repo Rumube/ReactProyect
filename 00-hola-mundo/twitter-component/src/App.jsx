@@ -9,18 +9,18 @@ const users = [
     isFollowing: false
   },
   {
-    userName: 'Xemantica',
-    name: 'Noelia Prícipe',
+    userName: 'Paraguas',
+    name: 'Paraguas Martinez',
     isFollowing: true
   },
   {
-    userName: 'Adrihina',
-    name: 'Adrián Hinarejos',
+    userName: 'LaMaruja',
+    name: 'Maruja Consuelo',
     isFollowing: true
   },
   {
-    userName: 'Rascot',
-    name: 'Carlos Martos',
+    userName: 'TortillaConCebolla',
+    name: 'Tortello Cebollín',
     isFollowing: false
   }
 ]
