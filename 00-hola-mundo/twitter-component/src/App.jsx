@@ -1,25 +1,47 @@
 import React, { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import TwitterFollowCard from './TwitterFollowCard'
 
+const users = [
+  {
+    userName: 'Rubos8',
+    name: 'Rubén Muñoz',
+    isFollowing: false
+  },
+  {
+    userName: 'Xemantica',
+    name: 'Noelia Prícipe',
+    isFollowing: true
+  },
+  {
+    userName: 'Adrihina',
+    name: 'Adrián Hinarejos',
+    isFollowing: true
+  },
+  {
+    userName: 'Rascot',
+    name: 'Carlos Martos',
+    isFollowing: false
+  }
+]
 function App() {
 
-  //PREFERIBLE NO USAR POR TEMAS DE OPTIMIZACIÓN
-  const userData = {isFollowing: false, userName: 'Rubos8'}
-
-
   return (
-    <div className='App'>
-      <TwitterFollowCard {...userData}>
-        Rubén Muñoz
-      </TwitterFollowCard>
-
-      <TwitterFollowCard isFollowing userName={"Xemantica"}>
-        Noelia Prícipe
-      </TwitterFollowCard>
-    </div>
+    <section className='App'>
+      {
+        users.map(user =>{
+          const{userName, name, isFollowing} = user
+          return(
+            <TwitterFollowCard
+              key={userName} 
+              userName={userName}
+              initialIsFollowing={isFollowing}>
+                {name}
+            </TwitterFollowCard>
+          )
+        })
+      }
+    </section>
   )
 }
 
