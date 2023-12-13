@@ -2,21 +2,23 @@ import React, { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import TwitterFollowCard from './assets/TwitterFollowCard'
+import TwitterFollowCard from './TwitterFollowCard'
 
 function App() {
-  const formatUserName = (userName) => `@${userName}`
+
+  //PREFERIBLE NO USAR POR TEMAS DE OPTIMIZACIÓN
+  const userData = {isFollowing: false, userName: 'Rubos8'}
+
+
   return (
     <div className='App'>
-      <TwitterFollowCard 
-        formatUserName={formatUserName}
-        isFollowing userName={"Rubos8"}
-        name={"Rubén Muñoz"} />
+      <TwitterFollowCard {...userData}>
+        Rubén Muñoz
+      </TwitterFollowCard>
 
-      <TwitterFollowCard 
-        formatUserName={formatUserName}
-        userName={"Xemantica"}
-        name={"Noelia Príncipe"} />
+      <TwitterFollowCard isFollowing userName={"Xemantica"}>
+        Noelia Prícipe
+      </TwitterFollowCard>
     </div>
   )
 }
